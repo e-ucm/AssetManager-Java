@@ -17,11 +17,11 @@
  */
 package eu.rageproject.asset.manager;
 
-import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentMap;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -51,6 +51,9 @@ public enum AssetManager {
 	
 	private ILog logger = null;
 
+	/**
+	 * was Map
+	 */
 	private ConcurrentMap<String, IAsset> assets;
 
 	private IBridge bridge;
@@ -60,7 +63,10 @@ public enum AssetManager {
 	 */
 	private AssetManager() {
 		this.idGenerator = 0;
-		this.assets = new HashMap<>();
+		/**
+		 * was HashMap
+		 */
+		this.assets = new ConcurrentHashMap<>();
 		initEventSystem();
 	}
 
