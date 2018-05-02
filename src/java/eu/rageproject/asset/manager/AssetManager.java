@@ -27,13 +27,13 @@ import java.util.regex.Pattern;
 
 /**
  * <strong>IMPLEMENTATION NOTE</strong>
- * 
+ *
  * This class might not be completely thread-safe.
- * 
+ *
  * 1) Singleton (enum based) pattern implementation however is thread-safe, compiler enforced and correct.
  * 2) assets Map was changed into a ConcurrentMap (untested however).
  * 3) idGenerator is not thread safe.
- * 
+ *
  * @author Ivan Martinez-Ortiz
  * @author Wim van der Vegt (ounl)
  */
@@ -44,11 +44,11 @@ public enum AssetManager {
 	public static AssetManager getInstance() {
 		return AssetManager.INSTANCE;
 	}
-	
+
     private static final Pattern CLASS_PATTERN = Pattern.compile("^([^_]+)_\\d+$");
 
 	private int idGenerator;
-	
+
 	private ILog logger = null;
 
 	/**
@@ -99,10 +99,10 @@ public enum AssetManager {
 
 	/**
 	 * Searches for the first <code>Asset</code> by identifier.
-	 * 
+	 *
 	 * @param id
 	 *            The asset identifier.
-	 * 
+	 *
 	 * @return return the <code>Asset</code> or <code>null</code> if the
 	 *         <code>id</code> is not found.
 	 */
@@ -143,7 +143,10 @@ public enum AssetManager {
 			}
 		}
 
-		String id = String.format("%s_%d", clazz, idGenerator++);
+		String id;
+		synchronized (this) {
+			id = String.format("%s_%d", clazz, idGenerator++);
+		}
 
 		Log(Severity.Verbose,"Registering Asset %s/%s as %s", asset.getClassName(), clazz, id);
 
@@ -217,7 +220,7 @@ public enum AssetManager {
 
 	/**
 	 * Reports version and dependencies.
-	 * 
+	 *
 	 * @return The version and dependencies report.
 	 */
     public String getVersionAndDependenciesReport() {
@@ -228,7 +231,7 @@ public enum AssetManager {
 
             // Get system dependant end of line separators
             String eol = System.getProperty("line.separator");
-            
+
             report.append(padRight("Asset", col1w - "Asset".length()));
             report.append(padRight("| Depends on", col2w)).append(eol);
             report.append(padRight("", col1w, '-'));
@@ -243,11 +246,11 @@ public enum AssetManager {
                 int cnt = 0;
                 for (Map.Entry<String, String> dependency : asset.getDependencies().entrySet()) {
                     //! Better version matches (see Microsoft).
-                    // 
+                    //
                     //! https://msdn.microsoft.com/en-us/library/system.version(v=vs.110).aspx
                     //
                     //! dependency.value has min-max format (inclusive) like:
-                    // 
+                    //
                     //? v1.2.3-*        (v1.2.3 or higher)
                     //? v0.0-*          (all versions)
                     //? v1.2.3-v2.2     (v1.2.3 or higher less than or equal to v2.1)
@@ -345,7 +348,7 @@ public enum AssetManager {
 
 	/// <summary>
 	/// Clears the registration.
-	// This method can be used in test units to reset and 
+	// This method can be used in test units to reset and
 	/// </summary>
 	/// <remarks>Used for cleaning up in test suites (as static readonly _instance member cannot be destroyed).</remarks>
 	@SuppressWarnings("unused")
