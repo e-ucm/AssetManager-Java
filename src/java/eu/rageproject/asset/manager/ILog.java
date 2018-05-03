@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Open University of the Netherlands
+ * Copyright 2018 Open University of the Netherlands
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
