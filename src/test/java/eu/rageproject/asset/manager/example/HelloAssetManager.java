@@ -1,3 +1,5 @@
+package eu.rageproject.asset.manager.example;
+
 import eu.rageproject.asset.manager.AssetManager;
 import eu.rageproject.asset.manager.IBridge;
 import eu.rageproject.asset.manager.Severity;
