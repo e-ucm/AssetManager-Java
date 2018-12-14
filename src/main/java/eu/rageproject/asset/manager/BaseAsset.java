@@ -67,8 +67,8 @@ public abstract class BaseAsset implements IAsset {
 	 * @param format  	Describes the format to use.
 	 * @param args	  	Variable arguments providing the arguments.
 	 */
-	public void Log(Severity loglevel, String format, Object... args) {
-		Log(loglevel,String.format(Locale.ROOT, format, args));
+	public void log(Severity loglevel, String format, Object... args) {
+		log(loglevel,String.format(Locale.ROOT, format, args));
 	}
 
 	/**
@@ -77,11 +77,11 @@ public abstract class BaseAsset implements IAsset {
 	 * @param loglevel	The loglevel.
 	 * @param msg	  	The message.
 	 */
-	public void Log(Severity loglevel, String msg) {
+	public void log(Severity loglevel, String msg) {
 		logger = getInterface(ILog.class);
 
 		if (logger != null) {
-			logger.Log(loglevel, msg);
+			logger.log(loglevel, msg);
 		}
 	}
 
@@ -346,7 +346,7 @@ public abstract class BaseAsset implements IAsset {
 	 *
 	 * @return {@code true} if it succeeds, {@code false} otherwise.
 	 */
-	public Boolean SaveSettings(final String filename) {
+	public Boolean saveSettings(final String filename) {
 		IDataStorage ds = getInterface(IDataStorage.class);
 
 		if (ds != null && hasSettings()) {

@@ -196,7 +196,7 @@ public enum AssetManager {
 		logger = getInterface(ILog.class);
 
 		if (logger != null) {
-			logger.Log(loglevel, msg);
+			logger.log(loglevel, msg);
 		}
 	}
 

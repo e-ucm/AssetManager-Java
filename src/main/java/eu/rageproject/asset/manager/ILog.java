@@ -32,7 +32,7 @@ public interface ILog
      * @param severity	The severity.
      * @param msg	  	The message.
      */
-    void Log(Severity severity, String msg);
+    void log(Severity severity, String msg);
 
     /**
      * An enum constant representing the critical option.

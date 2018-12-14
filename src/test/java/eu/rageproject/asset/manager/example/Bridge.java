@@ -6,7 +6,7 @@ import eu.rageproject.asset.manager.Severity;
 
 public class Bridge implements IBridge, ILog
 {
-    public void Log(Severity severity, String msg) {
+    public void log(Severity severity, String msg) {
         System.out.println(severity.toString()+ " - " +msg);
     }
 }
