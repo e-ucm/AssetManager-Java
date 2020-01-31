@@ -1,10 +1,8 @@
-/*
- * Copyright 2018 e-ucm, Universidad Complutense de Madrid
+/**
+ * Copyright © 2018-20 e-UCM (http://www.e-ucm.es/)
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
- * This project has received funding from the European Union’s Horizon
- * 2020 research and innovation programme under grant agreement No 644187.
  * You may obtain a copy of the License at
  *
  *     http://www.apache.org/licenses/LICENSE-2.0
