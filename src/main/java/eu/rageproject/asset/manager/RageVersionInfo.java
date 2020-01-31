@@ -80,8 +80,7 @@ public class RageVersionInfo {
 	private List<Dependency> dependencies;
 
 	/**
-	 * Initializes a new instance of the {@link #AssetManagerPackage
-	 * .RageVersionInfo} class.
+	 * Initializes a new instance of the {@link RageVersionInfo} class.
 	 */
 	public RageVersionInfo() {
 		this.id = null;

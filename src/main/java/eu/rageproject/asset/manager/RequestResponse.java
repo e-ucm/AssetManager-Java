@@ -81,7 +81,7 @@ public class RequestResponse extends RequestSettings {
     /**
      * Gets a value indicating whether result is allowed.
      * 
-     * @ returns true if result allowed, false if not.
+     * @return true if result allowed, false if not.
      */
     public boolean GetResultAllowed() {
         return allowedResponsCodes.contains(responseCode);

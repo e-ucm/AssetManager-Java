@@ -19,9 +19,8 @@ package eu.rageproject.asset.manager;
 
 /**
  * Values that represent log severity.
- * <br/>
- *      See
- * <a href="https://msdn.microsoft.com/en-us/library/office/ff604025(v=office.14).aspx">Trace
+ * 
+ * @see <a href="https://msdn.microsoft.com/en-us/library/office/ff604025(v=office.14).aspx">Trace
  * and Event Log Severity Levels</a>
  */
 public enum Severity

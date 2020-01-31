@@ -199,7 +199,7 @@ public abstract class BaseAsset implements IAsset {
 	/**
 	 * Checks if the asset has settings
 	 *
-	 * @return {@code true} if this {@link Asset} has settings, {@code false}
+	 * @return {@code true} if this {@link IAsset} has settings, {@code false}
 	 * otherwhise.
 	 */
 	public boolean hasSettings() {
@@ -265,7 +265,9 @@ public abstract class BaseAsset implements IAsset {
 	 * Returns an object which is an instance of the given class associated with this object.
 	 * Returns null if no such object can be found.
 	 *
-	 * @param parameter1	the adapter class to look up.
+	 * @param <T>	Generic type parameter.
+	 * 
+	 * @param adapter	the adapter class to look up.
 	 *
 	 * @return a object of the given class, or null if this object does not have an adapter
 	 * for the given class.

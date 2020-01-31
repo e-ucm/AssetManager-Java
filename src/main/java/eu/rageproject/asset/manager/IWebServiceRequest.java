@@ -30,7 +30,7 @@ public interface IWebServiceRequest {
      * 
      * @param requestSettings Options for controlling the operation.
      *
-     * @returns A RequestResponse.
+     * @return A RequestResponse.
      */
     RequestResponse WebServiceRequest(RequestSettings requestSettings);
 }

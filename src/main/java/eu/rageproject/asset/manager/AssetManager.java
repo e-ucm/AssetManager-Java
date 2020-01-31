@@ -81,7 +81,8 @@ public enum AssetManager {
 	/**
 	 * Searches for the first asset by class
 	 *
-	 * @tparam T	Generic type parameter.
+	 * @param <T>	Generic type parameter.
+	 * 
 	 * @param clazz	The clazz.
 	 *
 	 * @return The found asset by class.
@@ -204,7 +205,9 @@ public enum AssetManager {
 	 * Returns an object which is an instance of the given class associated with this object.
 	 * Returns null if no such object can be found.
 	 *
-	 * @param parameter1	the adapter class to look up.
+	 * @param <T>	Generic type parameter.
+	 * 
+	 * @param adapter	the adapter class to look up.
 	 *
 	 * @return a object of the given class, or null if this object does not have an adapter
 	 * for the given class.
